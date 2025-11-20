@@ -1,4 +1,5 @@
 # Welcome message for the quiz
+import time 
 print("Welcome to the Pub Quiz!")
 
 # List of questions, options, and answers
@@ -22,6 +23,8 @@ quiz_questions = [
 ]
 
 Score = 0
+start = time.time()
+
 
 # Loop through each question
 for question in quiz_questions:
@@ -39,7 +42,9 @@ for question in quiz_questions:
         Score +=1
     else:
         print(f"Wrong! The correct answer was {question['answer']}.")
-
+end = time.time()
+length = end - start
 # Goodbye message
+print("\nit took", length, "seconds!" )
 print(f"\nYour final score is: {Score} out of {len(quiz_questions)} ")
 print("Thanks for playing the Pub Quiz!")
